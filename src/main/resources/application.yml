@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: crud
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/crud
+    username: root
+    password: 8899
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      dialect: org.hibernate.dialect.MySQL8Dialect
+      hibernate:
+        format_sql: true
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  cache:
+    type: redis
+    cache-names:
+      - cache1
+      - cache2
+    redis:
+      time-to-live: 3600000
+      cache-null-values: true
+
+
